@@ -73,14 +73,12 @@
 			<version>${switchyard.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.example.switchyard</groupId>
-			<artifactId>bar-artifact</artifactId>
+			<artifactId>bar</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.nielsen.engineering.mediaworks.panelcollectionsquery</groupId>
 			<artifactId>panelcollectionsquery</artifactId>
@@ -135,7 +133,7 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Dependencies>deployment.bar-artifact-0.0.1-SNAPSHOT.jar,deployment.panelcollectionsquery-1.0.1-SNAPSHOT.jar</Dependencies>
+							<Dependencies>deployment.bar-0.0.1-SNAPSHOT.jar</Dependencies>
 						</manifestEntries>
 					</archive>
 				</configuration>
