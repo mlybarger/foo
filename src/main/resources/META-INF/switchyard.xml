@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sy:switchyard xmlns:bean="urn:switchyard-component-bean:config:1.1" xmlns:file="urn:switchyard-component-camel-file:config:1.1" xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:sy="urn:switchyard-config:switchyard:1.1" name="foo" targetNamespace="urn:com.example.switchyard:foo:1.0">
+  <sca:composite name="foo" targetNamespace="urn:com.example.switchyard:foo:1.0">
+    <sca:component name="FooBean">
+      <bean:implementation.bean class="com.example.switchyard.foo.FooBean"/>
+      <sca:service name="Foo">
+        <sca:interface.java interface="com.example.switchyard.foo.Foo"/>
+      </sca:service>
+      <sca:reference name="Bar">
+        <sca:interface.java interface="com.example.switchyard.bar.Bar"/>
+      </sca:reference>
+    </sca:component>
+    <sca:service name="Foo" promote="FooBean/Foo">
+      <sca:interface.java interface="com.example.switchyard.foo.Foo"/>
+      <file:binding.file name="file1">
+        <file:directory>/tmp</file:directory>
+        <file:fileName>foo</file:fileName>
+        <file:consume/>
+      </file:binding.file>
+    </sca:service>
+    <sca:reference name="Bar" multiplicity="0..1" promote="FooBean/Bar">
+      <sca:interface.java interface="com.example.switchyard.bar.Bar"/>
+      <sca:binding.sca sy:targetNamespace="urn:com.example.switchyard:bar:1.0" name="sca1"/>
+    </sca:reference>
+  </sca:composite>
+</sy:switchyard>
