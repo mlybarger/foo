@@ -80,13 +80,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.nielsen.engineering.mediaworks.panelcollectionsquery</groupId>
-			<artifactId>panelcollectionsquery</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.switchyard.components</groupId>
 			<artifactId>
 				switchyard-component-test-mixin-naming
