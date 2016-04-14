@@ -13,6 +13,7 @@
     <sca:service name="Foo" promote="FooBean/Foo">
       <sca:interface.java interface="com.example.switchyard.foo.Foo"/>
       <file:binding.file name="file1">
+        <sy:operationSelector operationName="sample"/>
         <file:directory>/tmp</file:directory>
         <file:fileName>foo</file:fileName>
         <file:consume/>

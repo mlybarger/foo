@@ -25,5 +25,26 @@ public class FooBean implements Foo {
 		c.setMessage(message);
 		bar.complexMessage(c);
 	}
+	
+	@Override
+	public void sample(String message) {
+		LOG.info("message:"+ message);
+		boolean result = bar.sample(message);
+		LOG.info("sample() - done:" + result);
+	}
 
+	@Override
+	public void sampleTwo(String message) throws Exception {
+		LOG.info("sampleTwo():"+ message);
+		boolean result = bar.sampleTwo(message);
+		LOG.info("sampleTwo() - done:" + result);
+	}
+	
+	@Override
+	public void sampleThree(String message) throws Exception {
+		LOG.info("sampleTwo():"+ message);
+		boolean result = bar.sampleThree(message);
+		LOG.info("sampleTwo() - done:" + result);
+	}
+	
 }
